@@ -1,0 +1,8 @@
+Candidate registrations
+
+WHen the user is logged in,
+
+They click ‘register as a candidate’, the system takes them to a form screen where they enter their name, a picture of
+themselves and the party that they are running for.
+
+They can then submit, and there is a message that confirms the submission
