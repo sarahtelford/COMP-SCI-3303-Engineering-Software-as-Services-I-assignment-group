@@ -8,7 +8,6 @@
       <sourceFolder url="file://$MODULE_DIR$/features" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/tmp/cache" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -56,15 +55,9 @@
     <orderEntry type="library" scope="PROVIDED" name="turbo-rails (v1.0.1, Remote: ruby-2.7.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.4, Remote: ruby-2.7.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v4.2.0, Remote: ruby-2.7.0-p0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="webdrivers (v5.0.0, Remote: ruby-2.7.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.7.5, Remote: ruby-2.7.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, Remote: ruby-2.7.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v3.2.0, Remote: ruby-2.7.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.5.4, Remote: ruby-2.7.0-p0) [gem]" level="application" />
-  </component>
-  <component name="RakeTasksCache">
-    <option name="myRootTask">
-      <RakeTaskImpl id="rake" />
-    </option>
   </component>
 </module>
