@@ -1,0 +1,42 @@
+User Story: Voting above the line
+
+Authorised users must be able to sign into the voting system using their unique username and password.
+
+Authorised users will be promoted with the option to vote "above the line" or "below the line".
+
+After selecting "above the line", users will be redirected to a form that contains all the parties.
+
+When users select a party, a drop down list will appear with different voting preference numbers (1 - 12).
+
+After selecting a preference number. The number will appear next to the selected party.
+    all numbers must be assigned to a party
+    no parties can be assigned the same number
+    users can change the ordering at any point
+
+After all parties have been assigned a preference numbers, a button will appear which will allow user to submit their
+vote.
+    after submitting a confirmation message will appear.
+
+
+User Story: Voting below the line
+
+Authorised users must be able to sign into the voting system using their unique username and password.
+
+Authorised users will be promoted with the option to vote "above the line" or "below the line".
+
+After selecting "below the line", users will be redirected to a form that contains all candidates.
+
+When users select a candidate, a drop down list will appear with different voting preference numbers (1 - 12).
+
+After selecting a preference number. The number will appear next to the selected candidate.
+    all numbers must be assigned to a candidate
+    no candidate can be assigned the same number
+    users can change the ordering at any point
+
+After 12 candidates have been assigned a preference numbers, a button will appear which will allow user to submit their
+vote.
+    after submitting a confirmation message will appear.
+
+
+
+
