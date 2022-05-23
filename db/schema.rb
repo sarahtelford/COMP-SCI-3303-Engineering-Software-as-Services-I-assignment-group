@@ -14,6 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 0) do
   create_table "candidates", force: :cascade do |t|
     t.string "name"
     t.string "party"
+    t.date "birthday"
     t.integer "votes"
   end
 end
