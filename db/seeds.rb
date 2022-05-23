@@ -5,3 +5,30 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+candidates = Candidates.create([
+                                 { name: "John Adam",
+                                   party: "Liberal Party of Australia"},
+                                 { name: "Susie Smith",
+                                   party: "Australian Labor Party"},
+                                 { name: "Xavier Barns",
+                                   party: "Australian Greens"},
+                                 { name: "Paul Rudd",
+                                   party: "Animals Justice Party"},
+                                 { name: "Tony Stark",
+                                   party: "Australian National Party"},
+                                 { name: "Steve Rogers",
+                                   party: "One Nation"},
+                                 { name: "Donald Trumpet",
+                                   party: "Family First "},
+                                 { name: "Happy Harold ",
+                                   party: "Australian Greens"},
+                                 { name: "Mary-Jane Dope",
+                                   party: "Legalise Cannabis Party"},
+                                 { name: "Che Downs",
+                                   party: "Liberal Party of Australia"},
+                                 { name: "Agatha Brown",
+                                   party: "Animals Justice Party"},
+                                 { name: "Logan Paul",
+                                   party: "One Nation"}
+                               ])
