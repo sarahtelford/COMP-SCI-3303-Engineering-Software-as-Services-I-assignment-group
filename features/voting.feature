@@ -1,8 +1,25 @@
 Feature: Authorised users completing a vote
+
+  Background: Candidates in my database
+
+    Given the following Candidates exist:
+      | Name           | Photo | Party                      |
+      | John Adam      |       | Liberal Party of Australia |
+      | Susie Smith    |       | Australian Labor Party     |
+      | Xavier Barns   |       | Australian Greens          |
+      | Paul Rudd      |       | Animals Justice Party      |
+      | Tony Stark     |       | Australian National Party  |
+      | Steve Rogers   |       | One Nation                 |
+      | Donald Trumpet |       | Family First               |
+      | Happy Harold   |       | Australian Greens          |
+      | Mary-Jane Dope |       | Legalise Cannabis Party    |
+      | Che Downs      |       | Liberal Party of Australia |
+      | Agatha Brown   |       | Animals Justice Party      |
+      | Logan Paul     |       | One Nation                 |
+
   Scenario: Users wants to vote "above the line"
     Given : The users are signed in to an authorised account
     When : The user selects "above the line"
-    And : The submit button is pushed
     Then : The user is redirected to the "above the line" voting page
     And : The user should see all the parties
 
@@ -17,7 +34,6 @@ Feature: Authorised users completing a vote
   Scenario: Users wants to vote "below the line"
     Given : The users are signed in to an authorised account
     When : The user selects "below the line"
-    And : The submit button is pushed
     Then : The user is redirected to the "below the line" voting page
     And : The user should see all the candidates
 
