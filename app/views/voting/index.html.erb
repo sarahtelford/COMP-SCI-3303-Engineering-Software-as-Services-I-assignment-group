@@ -2,6 +2,14 @@
   hello
 </h1>
 
+<%= link_to 'addCandidate', class: "ui primary right floated button" do %>
+  <i class="add icon"></i> New Candidate
+<% end %>
+
+<%#= link_to @candidate.first, class: "ui button" do %>
+<!--  <i class="eye icon"></i> Show-->
+<%# end %>
+
 <table>
   <tbody>
   <% @candidate.each do |candidates| %>

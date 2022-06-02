@@ -1,0 +1,22 @@
+<h1 class="ui header">
+  <%= @candidate.name.blank? ? "Candidate" : @candidate.name %>
+</h1>
+
+<div class="ui card">
+  <div class="content">
+    <div class="ui divided very relaxed list">
+      <div class="item">
+        <div class="header">
+          Rating
+        </div>
+        <%= @candidate.name %>
+      </div>
+      <div class="item">
+        <div class="header">
+          Description
+        </div>
+        <%= @candidate.party %>
+      </div>
+    </div>
+  </div>
+</div>
