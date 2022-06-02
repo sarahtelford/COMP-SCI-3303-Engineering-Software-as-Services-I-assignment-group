@@ -1,6 +1,7 @@
 class VotingController < ApplicationController
 
   def index
+    @candidate = Candidates.all
   end
 
   def show
