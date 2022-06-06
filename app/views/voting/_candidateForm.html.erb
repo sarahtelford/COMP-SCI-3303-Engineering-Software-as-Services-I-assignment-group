@@ -1,0 +1,33 @@
+<%= form_with(model: candidate, html: { class: "ui form" }) do |form| %>
+<!--  add model: candidate but not compiling-->
+  <%# if candidate.errors.any? %>
+<!--    <div id="error_explanation">-->
+<!--      <h2><%#= pluralize(candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>-->
+
+<!--      <ul>-->
+        <%# candidate.errors.each do |error| %>
+<!--          <li><%#= error.full_message %></li>-->
+        <%# end %>
+<!--      </ul>-->
+<!--    </div>-->
+  <%# end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field" >
+    <%= form.label :party %>
+    <%= form.text_field :party, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthday %>
+    <%= form.text_area :birthday %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "ui primary button" %>
+  </div>
+<% end %>
