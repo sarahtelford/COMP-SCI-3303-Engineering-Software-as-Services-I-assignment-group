@@ -1,3 +1,3 @@
-class Candidates < ApplicationRecord
+class Candidate < ApplicationRecord
 
 end
