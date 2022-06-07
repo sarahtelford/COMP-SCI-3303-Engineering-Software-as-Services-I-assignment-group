@@ -2,27 +2,16 @@
   Voting Above The Line
 </h1>
 
+<div>
+  Select the number 1 in the dropdown next to the party which is your first choice.
+  <br>
+  You can then select the number 2 next to your second choice and continue until all partites have been assigned a number.
+</div>
+
+<br>
+
 <%= render 'votingForm', party: @party %>
 
-<table class="ui table">
-  <tbody>
-  <% @party.each do |parties| %>
-    <tr>
-      <td><%= parties.name %></td>
-      <% @vote_number.each do |votes| %>
-        <div class="field">
-          <div class="ui checkbox">
-            <%= check_box_tag "Votes[#{votes}]" %>
-            <label><%= votes %></label>
-          </div>
-        </div>
-      <% end %>
-    </tr>
-  <% end %>
-  </table>
-
-<div class="ui basic buttons">
-  <%= link_to 'Back', 'javascript:history.go(-1);' %><
-  <i class="chevron left icon"></i>
-
+<div class="actions">
+  <%= link_to 'Back', 'javascript:history.go(-1);' %>
 </div>

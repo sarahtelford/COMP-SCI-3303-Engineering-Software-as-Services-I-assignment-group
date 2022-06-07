@@ -1,16 +1,8 @@
 <h1 class="ui header">
-  hello
+  Australian Federal Election
 </h1>
 
-<%= link_to new_candidates_path, class: "ui primary right floated button" do %>
-  <i class="add icon"></i> New Candidate
-<% end %>
-
-<%#= link_to @candidate.first, class: "ui button" do %>
-<!--  <i class="eye icon"></i> Show-->
-<%# end %>
-
-<table>
+<table class="ui table">
   <tbody>
   <% @candidate.each do |candidates| %>
     <tr>
@@ -20,6 +12,25 @@
     </tr>
   <% end %>
   </table>
+
+<br>
+
+<table class="ui table">
+  <tbody>
+  <% @party.each do |parties| %>
+    <tr>
+      <td><%= parties.name %></td>
+    </tr>
+  <% end %>
+  </table>
+
+<%= link_to :addCandidate, class: "ui primary right floated button" do %>
+  <i class="add icon"></i> New Candidate
+<% end %>
+
+<%#= link_to @candidate.first, class: "ui button" do %>
+<!--  <i class="eye icon"></i> Show-->
+<%# end %>
 
 
 <div class="ui basic buttons">
@@ -34,62 +45,3 @@
   <% end %>
 </div>
 
-
-
-
-
-<!--<table class="ui table">-->
-<!--  <thead>-->
-<!--  <tr>-->
-<!--    <th>-->
-      <%#= link_to movies_path(sort: "title") do %>
-<!--        Title-->
-        <%# if @sort == "title" %>
-<!--          <i class="chevron up icon"></i>-->
-        <%# end %>
-      <%# end %>
-<!--    </th>-->
-<!--    <th>Rating</th>-->
-<!--    <th>Description</th>-->
-<!--    <th>-->
-      <%#= link_to movies_path(sort: "release_date") do %>
-<!--        Release Date-->
-        <%# if @sort == "release_date" %>
-<!--          <i class="chevron up icon"></i>-->
-        <%# end %>
-      <%# end %>
-<!--    </th>-->
-<!--    <th>-->
-<!--      Director-->
-<!--    </th>-->
-<!--    <th class="right aligned"></th>-->
-<!--  </tr>-->
-<!--  </thead>-->
-
-<!--  <tbody>-->
-  <%# @movies.each do |movie| %>
-<!--    <tr>-->
-<!--      <td><%#= movie.title %></td>-->
-<!--      <td><%#= movie.rating %></td>-->
-<!--      <td><%#= movie.description %></td>-->
-<!--      <td><%#= movie.release_date %></td>-->
-<!--      <td><%#= movie.director %></td>-->
-<!--      <td class="right aligned">-->
-<!--        <div class="ui small basic buttons">-->
-          <%#= link_to movie, class: "ui button" do %>
-<!--            <i class="eye icon"></i> Show-->
-          <%# end %>
-          <%#= link_to edit_movie_path(movie), class: "ui button" do %>
-<!--            <i class="edit icon"></i> Edit-->
-          <%# end %>
-          <%#= link_to movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui button" do %>
-<!--            <i class="remove icon"></i> Destroy-->
-          <%# end %>
-<!--        </div>-->
-<!--      </td>-->
-<!--    </tr>-->
-  <%# end %>
-<!--  </tbody>-->
-<!--</table>-->
-
-<br>

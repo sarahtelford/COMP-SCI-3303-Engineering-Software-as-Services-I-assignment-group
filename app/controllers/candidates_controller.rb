@@ -1,21 +1,33 @@
 class CandidatesController < ApplicationController
 
   def index
-    @candidate = Candidate.all
+    @candidate = Candidates.all
+    @party = Parties.all
   end
 
   def show
     id = params[:id]
-    @candidate = Candidate.find(id)
+    @candidate = Candidates.find(id)
   end
 
   def edit
-    @candidate = Candidate.find params[:id]
+    @candidate = Candidates.find params[:id]
   end
 
   def new
-    @candidate = Candidate.new
+    @candidate = Candidates.new
   end
+
+  def aboveLine
+    @party = Parties.all
+    @vote_number = Parties.vote_number
+  end
+
+  def belowLine
+    @candidate = Candidates.all
+    @vote_number = Candidates.vote_number
+  end
+
 
   # def create
   #   @candidate = Candidates.new(candidate_params)
@@ -34,7 +46,7 @@ class CandidatesController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_candidate
-    @candidate = Candidate.find(params[:id])
+    @candidate = Candidates.find(params[:id])
   end
 
   def candidate_params
