@@ -2,6 +2,8 @@
   Voting Below The Line
 </h1>
 
+<br>
+
 <table class="ui table">
   <tbody>
   <% @candidate.each do |candidate| %>
@@ -11,10 +13,10 @@
       <td><%= candidate.birthday %></td>
     </tr>
   <% end %>
-  </table>
+  </tbody>
+</table>
 
-<div class="ui basic buttons">
-  <%= link_to 'Back', 'javascript:history.go(-1);' %><
-  <i class="chevron left icon"></i>
-
-</div>
+<br>
+<%= link_to root_path, class: "ui basic button" do %>
+  Back
+<% end %>
