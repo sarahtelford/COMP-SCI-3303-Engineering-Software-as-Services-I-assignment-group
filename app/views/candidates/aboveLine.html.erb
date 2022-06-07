@@ -2,14 +2,27 @@
   Voting Above The Line
 </h1>
 
+<%= render 'votingForm', party: @party %>
 
-<table>
+<table class="ui table">
   <tbody>
-  <% @candidate.each do |candidates| %>
+  <% @party.each do |parties| %>
     <tr>
-    <td><%= candidates.name %></td>
-    <td><%= candidates.party %></td>
-    <td><%= candidates.birthday %></td>
+      <td><%= parties.name %></td>
+      <% @vote_number.each do |votes| %>
+        <div class="field">
+          <div class="ui checkbox">
+            <%= check_box_tag "Votes[#{votes}]" %>
+            <label><%= votes %></label>
+          </div>
+        </div>
+      <% end %>
     </tr>
   <% end %>
-</table>
+  </table>
+
+<div class="ui basic buttons">
+  <%= link_to 'Back', 'javascript:history.go(-1);' %><
+  <i class="chevron left icon"></i>
+
+</div>
