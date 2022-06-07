@@ -1,0 +1,22 @@
+<%= form_with url: "/aboveLine" do |form| %>
+
+  <table class="ui table">
+    <tbody>
+    <% @party.each do |parties| %>
+      <tr>
+        <td><%= parties.name %></td>
+        <td class="right aligned">
+          <div class="ui small basic buttons">
+            <%= select :parties, :rating, ['1','2','3','4','5','6'] %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+    </table>
+
+  <div class="actions">
+    <%= form.submit class: "ui primary button" %>
+  </div>
+
+<% end %>

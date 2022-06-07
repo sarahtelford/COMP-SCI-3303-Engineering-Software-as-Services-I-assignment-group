@@ -2,14 +2,16 @@
   Voting Above The Line
 </h1>
 
+<div>
+  Select the number 1 in the dropdown next to the party which is your first choice.
+  <br>
+  You can then select the number 2 next to your second choice and continue until all partites have been assigned a number.
+</div>
 
-<table>
-  <tbody>
-  <% @candidate.each do |candidates| %>
-    <tr>
-    <td><%= candidates.name %></td>
-    <td><%= candidates.party %></td>
-    <td><%= candidates.birthday %></td>
-    </tr>
-  <% end %>
-</table>
+<br>
+
+<%= render 'votingForm', party: @party %>
+
+<%= link_to root_path, class: "ui basic button" do %>
+  Back
+<% end %>

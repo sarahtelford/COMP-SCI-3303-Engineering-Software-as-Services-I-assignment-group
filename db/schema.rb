@@ -18,8 +18,8 @@ ActiveRecord::Schema[7.0].define(version: 0) do
     t.integer "votes"
   end
 
-  create_table "party", force: :cascade do |t|
-    t.string "party"
+  create_table "parties", force: :cascade do |t|
+    t.string "name"
     t.integer "votes"
   end
 

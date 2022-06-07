@@ -5,6 +5,8 @@ ruby "2.7.2"
 
 gem 'sassc-rails'
 
+gem 'semantic-ui-sass'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.2", ">= 7.0.2.3"
 

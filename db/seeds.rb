@@ -32,3 +32,14 @@ candidates = Candidates.create([
                                  { name: "Logan Paul",
                                    party: "One Nation"}
                                ])
+
+parties = Parties.create([
+                           { name: "Liberal Party of Australia"},
+                           { name: "Australian Labor Party"},
+                           { name: "Australian Greens"},
+                           { name: "Animals Justice Party"},
+                           { name: "Australian National Party"},
+                           { name: "One Nation"},
+                           { name: "Family First "},
+                           { name: "Legalise Cannabis Party"}
+                         ])

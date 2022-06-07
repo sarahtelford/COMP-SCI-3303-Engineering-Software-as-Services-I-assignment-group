@@ -6,11 +6,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="ui top fixed menu">
+      <div class="item">
+        <h3><%=link_to 'Australia Federal Election', root_path %></h3>
+      </div>
+    </div>
+    <div class="ui container main">
+      <%= yield %>
+    </div>
   </body>
+
 </html>
