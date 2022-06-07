@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  resource :voting
-  root 'voting#index'
-  get '/voting/:id', to: 'voting#show'
-  get '/addCandidate', to: 'voting#new', as: 'addCandidate'
+  resource :candidates
+  root 'candidates#index'
+  # get '/addCandidate', to: 'candidates#new', as: 'addCandidate'
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
