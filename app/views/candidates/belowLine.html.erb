@@ -2,19 +2,14 @@
   Voting Below The Line
 </h1>
 
+<div>
+  Select the number 1 in the dropdown next to the candidate who is your first choice.
+  <br>
+  Continue by selecting the numbers 2 ... 12 in the dropdown next to the other candidates of your choice until you have assigned all 12 candidates.
+</div>
 <br>
 
-<table class="ui table">
-  <tbody>
-  <% @candidate.each do |candidate| %>
-    <tr>
-      <td><%= candidate.name %></td>
-      <td><%= candidate.party %></td>
-      <td><%= candidate.birthday %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<%= render 'belowVotingForm', candidate: @candidate %>
 
 <br>
 <%= link_to root_path, class: "ui basic button" do %>
