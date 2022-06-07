@@ -1,0 +1,61 @@
+User Story: Authorised Admin members will be allowed to remove a Candidate from the Ballot
+ 
+Basic Outline 
+  On the home page choose login
+  Choose Admin Login - taken to the admin login page
+  Admin login - username and password
+  Taken to Admin home page
+  Choose remove candidate
+       { 4 options: add candidate, edit candidates, remove candidate, view votes }
+  Taken to page displaying list of candidates (remove candidate list)
+  Press the ‘Remove’ button for candidate you want to delete
+  Taken to check page displaying message asking, ‘Are you sure you want to remove this Candidate?’
+  Press the ‘Yes’ button
+  Candidate removed
+  Return to remove candidate list page
+ 
+ 
+ 
+Remove Candidate Efficiently
+
+After logging in to an Admin account, you are taken to the Admin home page displaying four choices; Add Candidate, Edit Candidates, Remove Candidate, View Votes.
+ 
+Select Remove Candidate 
+ 
+Taken to Remove Candidate List page where all the Candidates are displayed showing their name, party and date of birth in a table structure with a Remove button to the left of the Candidates name.
+ 
+Select the Remove button for the Candidate you want to remove.
+ 
+Taken to a check page asking ‘Are you sure you want to Remove this Candidate?’ and then displaying the candidate's name, party and date of birth below the question. The page also has a Yes and No button displayed next to each other under the Candidate information
+ 
+Select the Yes button, removing the Candidate from the Candidate List
+ 
+Taken back to the Remove Candidate List page
+ 
+ 
+ 
+ 
+ 
+Remove Candidate after initially selecting the wrong Candidate
+ 
+After logging in to an Admin account, you are taken to the Admin Homepage displaying four choices; Add Candidate, Edit Candidates, Remove Candidate and View Votes.
+ 
+Select Remove Candidate 
+ 
+Taken to the Remove Candidate List page where all the Candidates are displayed showing their name, party, and date of birth in a table structure with a Remove button to the left of the Candidates name.
+ 
+Select the Remove button for the Candidate you want to remove.
+ 
+Taken to a check page asking ‘Are you sure you want to Remove this Candidate?’ and then displaying the candidate's name, party and date of birth below the question. The page also has a Yes and No button displayed next to each other under the Candidate information
+ 
+Select the No button
+ 
+Taken back to the Remove Candidate page.
+ 
+Select the Remove button for the Candidate you want to remove.
+ 
+Taken to a check page asking ‘Are you sure you want to Remove this Candidate?’ and then displaying the candidate's name, party and date of birth below the question. The page also has a Yes and No button displayed next to each other under the Candidate information
+ 
+Select the Yes button, removing the Candidate from the Candidate List
+ 
+Taken back to the Remove Candidate List page
