@@ -2,10 +2,6 @@
   Australian Federal Election
 </h1>
 
-<%= link_to :addCandidate, class: "ui primary right floated button" do %>
-  <i class="add icon"></i> New Candidate
-<% end %>
-
 <table class="ui table">
   <tr>
     <th>
@@ -16,26 +12,26 @@
     </th>
   </tr>
   <tbody>
-  <% @candidate.each do |candidates| %>
+  <% @candidate.each do |candidate| %>
     <tr>
-      <td><%= candidates.name %></td>
-      <td><%= candidates.party %></td>
-      <td><%= candidates.birthday %></td>
+      <td><%= candidate.name %></td>
+      <td><%= candidate.party %></td>
+      <td><%= candidate.birthday %></td>
     </tr>
   <% end %>
   </table>
 
-<br>v
+<br>
 
 <div> How would you like to vote?</div>
 <div class="ui basic buttons">
   <%= link_to :above_line, class: "ui button" do %>
-    Above line
+    Above Line
   <% end %>
 </div>
 
 <div class="ui basic buttons">
   <%= link_to :below_line, class: "ui button" do %>
-    <below line
+    Below Line
   <% end %>
 </div>

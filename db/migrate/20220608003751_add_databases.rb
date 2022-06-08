@@ -3,12 +3,12 @@ class AddDatabases < ActiveRecord::Migration[7.0]
     create_table :candidates do |t|
       t.string :name
       t.string :party
-      t.string :birthday
-      t.string :votes
+      t.datetime :birthday
+      t.integer :votes
     end
     create_table :parties do |t|
       t.string :name
-      t.string :votes
+      t.integer :votes
     end
   end
 end

@@ -1,4 +1,15 @@
-<%= form_with url: "/belowLine" do |form| %>
+<%= form_with url: @candidateVote do |form| %>
+  <% if @candidateVote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@candidateVote.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+        <% @candidateVote.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <table class="ui table">
     <tr>

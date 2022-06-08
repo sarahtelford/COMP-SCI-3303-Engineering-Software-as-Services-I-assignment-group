@@ -1,0 +1,43 @@
+<h1 class="ui header">
+  Australian Federal Election
+</h1>
+
+<%= link_to new_candidates_path, class: "ui primary right floated button" do %>
+  <i class="add icon"></i> New Candidate
+<% end %>
+<br>
+<br>
+
+<table class="ui table">
+  <thead>
+  <tr>
+    <th>
+      Candidate Name
+    </th>
+    <th>
+      Party
+    </th>
+    <th>
+      Birthday
+    </th>
+    <th>
+      Votes
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @candidate.each do |candidates| %>
+    <tr>
+      <td><%= candidates.name %></td>
+      <td><%= candidates.party %></td>
+      <td><%= candidates.birthday %></td>
+      <td><%= candidates.votes %></td>
+    </tr>
+    <td class="right aligned">
+
+    </td>
+  <% end %>
+  </tbody>
+
+</table>
+
