@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_08_051922) do
   create_table "candidates", force: :cascade do |t|
     t.string "name"
     t.string "party"
-    t.datetime "birthday"
+    t.date "birthday", null: false
     t.integer "votes"
   end
 

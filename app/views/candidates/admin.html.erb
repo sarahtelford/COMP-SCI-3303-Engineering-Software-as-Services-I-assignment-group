@@ -24,20 +24,19 @@
       Votes
     </th>
     <th>
-
     </th>
   </tr>
   </thead>
   <tbody>
-  <% @candidate.each do |candidates| %>
+  <% @candidate.each do |candidate| %>
     <tr>
-      <td><%= candidates.name %></td>
-      <td><%= candidates.party %></td>
-      <td><%= candidates.birthday %></td>
-      <td><%= candidates.votes %></td>
+      <td><%= candidate.name %></td>
+      <td><%= candidate.party %></td>
+      <td><%= candidate.birthday %></td>
+      <td><%= candidate.votes %></td>
       <td class="right aligned">
         <div class="ui small basic buttons">
-          <%= link_to candidates, class: "ui button" do %>
+          <%= link_to candidate, class: "ui button" do %>
             Show details
           <% end %>
         </div>
