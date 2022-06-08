@@ -1,0 +1,5 @@
+class ChangePartyNameStringToFullParty < ActiveRecord::Migration[7.0]
+  def change
+    change_column :candidate, :party, :party
+  end
+end
