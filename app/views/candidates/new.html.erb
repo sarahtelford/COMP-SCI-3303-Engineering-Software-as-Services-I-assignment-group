@@ -1,14 +1,13 @@
 <h1 class="ui header">
   Register as candidate
 </h1>
-
-<%= form_for(@candidate) do |form| %>
-  <% if candidate.errors.any? %>
+<%= form_with url: '/create', method: :post do |form| %>
+  <% if @candidate.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(candidate.errors.count, "error") %> prohibited this movie from being saved:</h2>
+      <h2><%= pluralize(@candidate.errors.count, "error") %> prohibited this movie from being saved:</h2>
 
       <ul>
-        <% candidate.errors.each do |error| %>
+        <% @candidate.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -20,8 +19,10 @@
     <%= form.text_field :name, autofocus: true %>
   </div>
 
-  <%# @candidate.each do |parties| %>
-  <%# end %>
+  <div class="field">
+    <%= form.label :party %>
+    <%= form.text_field :party, autofocus: true %>
+  </div>
 
   <div class="field">
     <%= form.label :birthday %>
