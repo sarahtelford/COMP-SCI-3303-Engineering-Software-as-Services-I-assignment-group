@@ -23,6 +23,9 @@
     <th>
       Votes
     </th>
+    <th>
+
+    </th>
   </tr>
   </thead>
   <tbody>
@@ -32,10 +35,15 @@
       <td><%= candidates.party %></td>
       <td><%= candidates.birthday %></td>
       <td><%= candidates.votes %></td>
+      <td class="right aligned">
+        <div class="ui small basic buttons">
+          <%= link_to candidates, class: "ui button" do %>
+            Show details
+          <% end %>
+        </div>
+      </td>
     </tr>
-    <td class="right aligned">
 
-    </td>
   <% end %>
   </tbody>
 

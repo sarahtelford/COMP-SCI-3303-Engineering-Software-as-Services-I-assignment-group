@@ -2,21 +2,45 @@
   <%= @candidate.name.blank? ? "Candidate" : @candidate.name %>
 </h1>
 
+<%= semantic_flash %>
+
 <div class="ui card">
   <div class="content">
     <div class="ui divided very relaxed list">
       <div class="item">
         <div class="header">
-          Rating
+          Candidate Name
         </div>
         <%= @candidate.name %>
       </div>
       <div class="item">
         <div class="header">
-          Description
+          Party
         </div>
         <%= @candidate.party %>
       </div>
+      <div class="item">
+        <div class="header">
+          Birthday
+        </div>
+        <%= @candidate.birthday %>
+      </div>
+      <div class="item">
+        <div class="header">
+          Votes
+        </div>
+        <%= @candidate.votes %>
+      </div>
     </div>
   </div>
+</div>
+
+
+<div class="ui basic buttons">
+  <%= link_to :delete, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui button" do %>
+    Remove Candidate
+  <% end %>
+  <%= link_to admin_path, class: "ui button" do %>
+    Back
+  <% end %>
 </div>

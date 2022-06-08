@@ -1,10 +1,3 @@
-Given(/^ the following Candidates exist:$/) do |candidates_table|
-  candidates_table.hashes.each do |candidate|
-    Candidate.create candidate
-  end
-end
-
-
 Given(/^: I am on the home page$/) do
   visit root_path
 end

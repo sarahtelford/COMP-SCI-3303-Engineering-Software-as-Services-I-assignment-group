@@ -1,6 +1,6 @@
 Given(/^the following Candidates exist:$/) do |candidates_table|
   candidates_table.hashes.each do |candidate|
-    candidates = Candidate.create candidate
+    Candidate.create candidate
   end
 end
 
@@ -32,8 +32,8 @@ Given(/^: The user is on the "Above Line" voting page$/) do
   visit '/public/aboveLine'
 end
 
-When(/^: The dropdown list is selected, numbers 1-12 are dispalyed$/) do
-  expect(page).to have_content()
+When(/^: The dropdown list is selected, numbers 1-6 are dispalyed$/) do
+  pending
 end
 
 When(/^: Value is selected it is assigned to the associated party$/) do
@@ -41,7 +41,7 @@ When(/^: Value is selected it is assigned to the associated party$/) do
 end
 
 Given(/^: All numbers are assigned to a party$/) do
-  pending
+  page.all('select#vote option').map(&:vote).should == %w(1 2 3 4 5 6)
 end
 
 Then(/^: The submit button is enabled$/) do
@@ -64,14 +64,10 @@ Given(/^: The user is on the "Below Line" voting page$/) do
 end
 
 
-When(/^: A the dropdown list is selected, numbers 1\-12 are dispalyed$/) do |arg|
-  pending
-end
-
-When(/^: Value is selected it is assigned to the associated candidate$/) do
+When(/^: A the dropdown list is selected, numbers 1-12 are dispalyed$/) do |arg|
   pending
 end
 
 Given(/^: All numbers are assigned to a candidate$/) do
-  pending
+  page.all('select#vote option').map(&:vote).should == %w(1 2 3 4 5 6 7 8 9 10 11 12)
 end

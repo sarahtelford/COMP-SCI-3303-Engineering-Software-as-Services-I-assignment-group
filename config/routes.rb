@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
   resource :candidates
+  resource :candidate
 
   root 'candidates#index'
-  get '/voting/:id' => 'candidates#show', as: :show
   get '/public/aboveLine' => 'candidates#aboveLine', as: :above_line
   get '/public/belowLine' => 'candidates#belowLine', as: :below_line
   get '/admin/addCandidate', to: 'candidates#new'
-
-  post '/public/candidates_controller/belowLineVote/', to: 'candidates#belowLineVoting'
+  get '/admin/showCandidate/:id', to: 'candidates#show', as: :show
 
   get '/public', to: 'candidates#public', as: :public
   get '/admin', to: 'candidates#admin', as: :admin
