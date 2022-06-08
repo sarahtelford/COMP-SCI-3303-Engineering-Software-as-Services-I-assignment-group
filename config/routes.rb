@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get '/aboveLine' => 'candidates#aboveLine', as: :above_line
   get '/voting/:id' => 'candidates#show', as: :show
   get '/belowLine' => 'candidates#belowLine', as: :below_line
-  get '/addCandidate', to: 'candidates#new', as: :addCandidate
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
