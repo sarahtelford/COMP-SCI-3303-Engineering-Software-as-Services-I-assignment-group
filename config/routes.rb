@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   get '/admin/addCandidate', to: 'candidates#new'
 
   post '/public/candidates_controller/belowLineVote/', to: 'candidates#belowLineVoting'
+  post '/public/candidates_controller/aboveLineVote/', to: 'candidates#aboveLineVoting'
 
   get '/public', to: 'candidates#public', as: :public
   get '/admin', to: 'candidates#admin', as: :admin
+  get '/landing', to: 'candidates#landing'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
