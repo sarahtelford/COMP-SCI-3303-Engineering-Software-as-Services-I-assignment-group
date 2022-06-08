@@ -48,3 +48,27 @@
 
 </table>
 
+<table class="ui table">
+  <thead>
+  <tr>
+    <th>
+      Party Name
+    </th>
+    <th>
+      Votes
+    </th>
+    <th>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @party.each do |party| %>
+    <tr>
+      <td><%= party.name %></td>
+      <td><%= party.votes %></td>
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>
+
