@@ -70,13 +70,13 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'capybara', '2.18.0'             # to avoid deprecation warnings
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
+  gem 'cucumber', '2.99.0'             # to avoid bug in cucumber 3
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'               # to clear Cucumber's test database between runs
-  gem 'capybara', '2.18.0'             # to avoid deprecation warnings
-  gem 'cucumber', '2.99.0'             # to avoid bug in cucumber 3
-  gem 'launchy'                        # a useful debugging aid for user stories
-  gem 'selenium-webdriver'
-  gem 'chromedriver-helper'            # to run system tests with chrome
+
 
   # Unit testing framework
   gem 'autotest'

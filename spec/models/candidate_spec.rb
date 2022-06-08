@@ -16,5 +16,13 @@ RSpec.describe Candidate, type: :model do
       dummyCandidate = Candidate.new(name: "a name", birthday: "02-02-2002", party: "a party")
       expect(dummyCandidate.update(name: "a name 2", birthday: "02-02-2003", party: "a party2")).to be true
     end
+
+    it 'Should create a new candidate' do
+      expect(get: '/candidates/new').to be_routable
+      expect(Candidate.new()).to respond_to(:name)
+      expect(Candidate.new()).to respond_to(:party)
+      expect(Candidate.new()).to respond_to(:birthday)
+    end
+
   end
 end

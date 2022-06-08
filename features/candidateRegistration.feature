@@ -1,35 +1,35 @@
 Feature: New candidate registering
-  In order to register to be a candidate
-  A user Should be able to enter their details
+  In order to register to be a candidate a user Should be able to enter their details
 
   Background: Candidates in my database
 
     Given the following Candidates exist:
-      | Name           |  Party                      | Birthday |
-      | John Adam      |  Liberal Party of Australia |          |
-      | Susie Smith    |  Australian Labor Party     |          |
-      | Xavier Barns   |  Australian Greens          |          |
-      | Paul Rudd      |  Animals Justice Party      |          |
-      | Tony Stark     |  Australian National Party  |          |
-      | Steve Rogers   |  One Nation                 |          |
-      | Donald Trumpet |  Family First               |          |
-      | Happy Harold   |  Australian Greens          |          |
-      | Mary-Jane Dope |  Legalise Cannabis Party    |          |
-      | Che Downs      |  Liberal Party of Australia |          |
-      | Agatha Brown   |  Animals Justice Party      |          |
-      | Logan Paul     |  One Nation                 |          |
+      | name           |  party                      | birthday |
+      | John Adam      |  Liberal Party of Australia | 8/08/2008|
+      | Susie Smith    |  Australian Labor Party     | 8/08/2008|
+      | Xavier Barns   |  Australian Greens          | 8/08/2008|
+      | Paul Rudd      |  Animals Justice Party      | 8/08/2008|
+      | Tony Stark     |  Australian National Party  | 8/08/2008|
+      | Steve Rogers   |  One Nation                 | 8/08/2008|
+      | Donald Trumpet |  Family First               | 8/08/2008|
+      | Happy Harold   |  Australian Greens          | 8/08/2008|
+      | Mary-Jane Dope |  Legalise Cannabis Party    | 8/08/2008|
+      | Che Downs      |  Liberal Party of Australia | 8/08/2008|
+      | Agatha Brown   |  Animals Justice Party      | 8/08/2008|
+      | Logan Paul     |  One Nation                 | 8/08/2008|
 
   Scenario: Registering a new candidate
-    Given I am on the home page
-    When I click on "Register as candidate" and enter details
-    Then I should see "You have successfully registered as a candidate in the election! Good luck!"
-
-  Scenario: User wants to register, but has already registered
     Given : I am on the home page
-    When : The user selects "Register as candidate" and enter duplicate details
-    Then : The user should see "you have already registered as a candidate!"
+    When : I click on New Candidate I enter details for a candidate
+    Then : I should see the new candidate on the homepage
 
-  Scenario: User wants to register, but enters invalid details
+  Scenario: User wants to register a new candidate, but candidate has already been registered
     Given : I am on the home page
-    When : The user selects "Register as candidate" and enter invalid details
-    Then : The user should observe "You need to enter your name"
+    When : I click on New Candidate I enter details for an already existing candidate
+    Then : The user should be redirected to the admin page
+    And : I should be informed that "Candidate already exists"
+
+  Scenario: User wants to register a new candidate, but enters invalid details
+    Given : I am on the home page
+    When : I click on New Candidate I enter invalid details for a candidate
+    Then : The user should observe "Please fill in all fields"
