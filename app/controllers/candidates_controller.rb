@@ -1,21 +1,21 @@
 class CandidatesController < ApplicationController
 
   def index
-    @candidate = Candidates.all
+    @candidate = Candidate.all
     @party = Parties.all
   end
 
   def show
     id = params[:id]
-    @candidate = Candidates.find(id)
+    @candidate = Candidate.find(id)
   end
 
   def edit
-    @candidate = Candidates.find params[:id]
+    @candidate = Candidate.find params[:id]
   end
 
   def new
-    @candidate = Candidates.new
+    @candidate = Candidate.new
   end
 
   def aboveLine
@@ -24,17 +24,17 @@ class CandidatesController < ApplicationController
   end
 
   def belowLine
-    @candidate = Candidates.all
-    @vote_number = Candidates.vote_number
+    @candidate = Candidate.all
+    @vote_number = Candidate.vote_number
   end
 
 
   def create
-    @candidate = Candidates.new(candidate_params)
+    @candidate = Candidate.new(candidate_params)
 
     respond_to do |format|
       if @candidate.save
-        format.html { redirect_to @candidate, notice: "Candidate was successfully added." }
+        format.html { redirect_to root_path, notice: "Candidate was successfully added." }
         format.json { render :show, status: :created, location: @candidate }
       else
         format.html { render :new}
@@ -46,7 +46,7 @@ class CandidatesController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_candidate
-    @candidate = Candidates.find(params[:id])
+    @candidate = Candidate.find(params[:id])
   end
 
   def candidate_params

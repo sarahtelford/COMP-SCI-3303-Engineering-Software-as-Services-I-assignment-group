@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_08_003751) do
   create_table "candidates", force: :cascade do |t|
     t.string "name"
     t.string "party"
-    t.datetime "birthday"
-    t.integer "votes"
+    t.string "birthday"
+    t.string "votes"
   end
 
   create_table "parties", force: :cascade do |t|
     t.string "name"
-    t.integer "votes"
+    t.string "votes"
   end
 
 end
