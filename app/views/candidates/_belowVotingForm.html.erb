@@ -1,4 +1,8 @@
-  <table class="ui table">
+<!--<head>-->
+  <%#= javascript_pack_tag 'my_js' %>
+<!--</head>-->
+
+<table class="ui table">
     <tr>
       <th>
         Candidate Name
@@ -15,28 +19,17 @@
       <tr>
         <td><%= cand.name %></td>
         <td><%= cand.party %></td>
-        <td class="right aligned">
-          <% @candidate = Candidate.find(cand.id) %>
-          <%= form_for :tuple, url: '/public/candidates_controller/belowLineVote/' do |form| %>
-            <% if @candidate.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(@candidate.errors.count, "error") %> prohibited this movie from being saved:</h2>
-
-                <ul>
-                  <% @candidate.errors.each do |error| %>
-                    <li><%= error.full_message %></li>
-                  <% end %>
-                </ul>
-              </div>
-            <% end %>
-
-            <%= form.select :votes, %w[1 2 3 4 5 6 7 8 9 10 11 12], :include_blank => true %>
+        <td>
+          <%= form_for :vote, url: '/public/candidates_controller/belowLineVote/' do |form| %>
+            <%= form.select :votes, %w[1 2 3 4 5 6 7 8 9 10 11 12], :include_blank => true, required:true %>
             <%= form.hidden_field :id, value: cand.id %>
             <%= form.submit class: "ui primary button" %>
+          <% end %>
         </td>
       </tr>
-    <% end %>
+      <% end %>
     </tbody>
+    <%= link_to :above_line, class: "ui button" do %>
+      Above Line
+    <% end %>
   </table>
-
-<% end %>
