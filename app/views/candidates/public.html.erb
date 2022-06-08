@@ -15,10 +15,10 @@
     </th>
   </tr>
   <tbody>
-  <% @candidate.each do |candidate| %>
+  <% @candidate.each do |candidates| %>
     <tr>
-      <td><%= candidate.name %></td>
-      <td><%= candidate.party %></td>
+      <td><%= candidates.name %></td>
+      <td><%= candidates.party %></td>
     </tr>
   <% end %>
   </tbody>

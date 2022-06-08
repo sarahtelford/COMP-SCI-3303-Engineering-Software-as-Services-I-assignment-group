@@ -3,25 +3,27 @@ Given(/^: The admin is on the Admin home page$/) do
 end
 
 When(/^: The admin selects the “Remove Candidate” button next to a candidate$/) do
-
+  expect(page).to have_content('Steve Rogers')
+  expect(page).to have_content('One Nation')
 end
 
 When(/^: The admin selects the “Yes” button to confirm this is the candidate they want to remove$/) do
-  pending
+  click_button 'Yes'
 end
 
 Then(/^: The admin is taken to Admin home page$/) do
-  pending
+  visit admin_path
 end
 
 And(/^: should not see the removed candidate$/) do
-  pending
+  expect(page).not_to have_content('Steve Rogers')
 end
 
 When(/^: The admin selects the “No” button to cancel removal of a candidate$/) do
-  pending
+  click_button 'No'
 end
 
 And(/^: should see the candidate$/) do
-  pending
+  expect(page).not_to have_content('Tony Stark')
 end
+

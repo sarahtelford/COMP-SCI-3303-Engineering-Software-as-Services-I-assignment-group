@@ -32,8 +32,13 @@ Given(/^: The user is on the "Above Line" voting page$/) do
   visit '/public/aboveLine'
 end
 
-When(/^: The dropdown list is selected, numbers 1-6 are dispalyed$/) do
-  pending
+When(/^: The dropdown list is selected, numbers 1-6 are displayed$/) do
+  expect(page).to have_content('1')
+  expect(page).to have_content('2')
+  expect(page).to have_content('3')
+  expect(page).to have_content('4')
+  expect(page).to have_content('5')
+  expect(page).to have_content('6')
 end
 
 When(/^: Value is selected it is assigned to the associated party$/) do
@@ -64,10 +69,21 @@ Given(/^: The user is on the "Below Line" voting page$/) do
 end
 
 
-When(/^: A the dropdown list is selected, numbers 1-12 are dispalyed$/) do |arg|
-  pending
-end
-
 Given(/^: All numbers are assigned to a candidate$/) do
   page.all('select#vote option').map(&:vote).should == %w(1 2 3 4 5 6 7 8 9 10 11 12)
+end
+
+When(/^: The dropdown list is selected, numbers 1-12 are displayed$/) do
+  expect(page).to have_content('1')
+  expect(page).to have_content('2')
+  expect(page).to have_content('3')
+  expect(page).to have_content('4')
+  expect(page).to have_content('5')
+  expect(page).to have_content('6')
+  expect(page).to have_content('7')
+  expect(page).to have_content('8')
+  expect(page).to have_content('9')
+  expect(page).to have_content('10')
+  expect(page).to have_content('11')
+  expect(page).to have_content('12')
 end
