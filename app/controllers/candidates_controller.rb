@@ -25,9 +25,19 @@ class CandidatesController < ApplicationController
 
   def belowLine
     @candidate = Candidate.all
+    @candidateVote = Candidate.new
     @vote_number = Candidate.vote_number
   end
 
+  def admin
+    @candidate = Candidate.all
+    @party = Party.all
+  end
+
+  def public
+    @candidate = Candidate.all
+    @party = Party.all
+  end
 
   def create
     @candidate = Candidate.new(candidate_params)
@@ -40,6 +50,14 @@ class CandidatesController < ApplicationController
         format.html { render :new}
         format.json { render json: @candidate.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    @candidate.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: "Candidate was successfully destroyed." }
+      format.json { head :no_content }
     end
   end
 
