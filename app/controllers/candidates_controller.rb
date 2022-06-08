@@ -25,7 +25,7 @@ class CandidatesController < ApplicationController
   def aboveLineVoting
     vote = params[:vote][:votes].to_i
     id = params[:vote][:id]
-    score = 12 - vote
+    score = 7 - vote
     @party = Party.find(id)
     @party.update(votes: score)
   end
@@ -37,7 +37,7 @@ class CandidatesController < ApplicationController
   def belowLineVoting
     vote = params[:vote][:votes].to_i
     id = params[:vote][:id]
-    score = 12 - vote
+    score = 13 - vote
     @candidate = Candidate.find(id)
     @candidate.update(votes: score)
   end
