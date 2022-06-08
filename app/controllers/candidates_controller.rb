@@ -24,9 +24,16 @@ class CandidatesController < ApplicationController
   end
 
   def belowLine
-    @candidate = Candidate.all
-    @candidateVote = Candidate.new
-    @vote_number = Candidate.vote_number
+    @candidates = Candidate.all
+  end
+
+  def belowLineVoting
+    vote = params[:tuple][:votes].to_i
+    id = params[:tuple][:id]
+    score = 10 - vote
+    @candidate = Candidate.find(id)
+
+    @candidate.update(votes: score)
   end
 
   def admin

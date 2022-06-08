@@ -1,16 +1,3 @@
-<%= form_with url: @candidateVote do |form| %>
-  <% if @candidateVote.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@candidateVote.errors.count, "error") %> prohibited this movie from being saved:</h2>
-
-      <ul>
-        <% @candidateVote.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <table class="ui table">
     <tr>
       <th>
@@ -24,22 +11,32 @@
       </th>
     </tr>
     <tbody>
-    <% @candidate.each do |candidate| %>
+    <% @candidates.each do |cand| %>
       <tr>
-        <td><%= candidate.name %></td>
-        <td><%= candidate.party %></td>
+        <td><%= cand.name %></td>
+        <td><%= cand.party %></td>
         <td class="right aligned">
-          <div class="ui left aligned">
-            <%= select :parties, :rating, ['1','2','3','4','5','6','7','8', '9','10', '11', '12'] %>
-          </div>
+          <% @candidate = Candidate.find(cand.id) %>
+          <%= form_for :tuple, url: '/public/candidates_controller/belowLineVote/' do |form| %>
+            <% if @candidate.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@candidate.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+                <ul>
+                  <% @candidate.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <%= form.select :votes, %w[1 2 3 4 5 6 7 8 9 10 11 12], :include_blank => true %>
+            <%= form.hidden_field :id, value: cand.id %>
+            <%= form.submit class: "ui primary button" %>
         </td>
       </tr>
     <% end %>
     </tbody>
   </table>
-
-  <div class="actions">
-    <%= form.submit class: "ui primary button" %>
-  </div>
 
 <% end %>

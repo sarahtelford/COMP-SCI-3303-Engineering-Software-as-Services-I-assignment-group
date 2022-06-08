@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/public/belowLine' => 'candidates#belowLine', as: :below_line
   get '/admin/addCandidate', to: 'candidates#new'
 
+  post '/public/candidates_controller/belowLineVote/', to: 'candidates#belowLineVoting'
+
   get '/public', to: 'candidates#public', as: :public
   get '/admin', to: 'candidates#admin', as: :admin
 
