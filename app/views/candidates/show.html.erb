@@ -1,4 +1,5 @@
 <h1 class="ui header">
+  Information page for
   <%= @candidate.name.blank? ? "Candidate" : @candidate.name %>
 </h1>
 
@@ -37,9 +38,6 @@
 
 
 <div class="ui basic buttons">
-  <%= link_to :delete, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui button" do %>
-    Remove Candidate
-  <% end %>
   <%= link_to admin_path, class: "ui button" do %>
     Back
   <% end %>
