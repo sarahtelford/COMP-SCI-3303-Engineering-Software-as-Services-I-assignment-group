@@ -39,6 +39,9 @@
           <%= link_to candidate, class: "ui button" do %>
             Show details
           <% end %>
+          <%= link_to candidate, method: :destroy, data: { confirm: 'Are you sure?' }, class: "ui button" do %>
+            Remove Candidate
+          <% end %>
         </div>
       </td>
     </tr>
@@ -48,6 +51,9 @@
 
 </table>
 
+<br>
+
+</table>
 <table class="ui table">
   <thead>
   <tr>
@@ -62,10 +68,21 @@
   </tr>
   </thead>
   <tbody>
+
   <% @party.each do |party| %>
     <tr>
       <td><%= party.name %></td>
       <td><%= party.votes %></td>
+      <td class="right aligned">
+        <div class="ui small basic buttons">
+          <%= link_to party, class: "ui button" do %>
+            Show details
+          <% end %>
+          <%= link_to party, method: :destroy, data: { confirm: 'Are you sure?' }, class: "ui button" do %>
+            Remove party
+          <% end %>
+        </div>
+      </td>
     </tr>
   <% end %>
   </tbody>
