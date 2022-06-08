@@ -1,17 +1,18 @@
 class CandidatesController < ApplicationController
-
+  before_action :set_candidate, only: %i[ show edit update destroy ]
   def index
     @candidate = Candidate.all
     @party = Party.all
   end
 
   def show
-    id = params[:id]
+    id = params.require(:id)
     @candidate = Candidate.find(id)
   end
 
   def edit
-    @candidate = Candidate.find params[:id]
+    id = params[:id]
+    @candidate = Candidate.find(id)
   end
 
   def new
@@ -40,6 +41,18 @@ class CandidatesController < ApplicationController
     @candidate = Candidate.find(id)
     score = 13 - vote + @candidate.votes
     @candidate.update(votes: score)
+  end
+
+  def update
+    respond_to do |format|
+      if @candidate.update(candidate_params)
+        format.html { redirect_to @candidate, notice: "Candidate was successfully updated." }
+        format.json { render :show, status: :ok, location: @candidate }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @candidate.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def admin
@@ -81,6 +94,6 @@ class CandidatesController < ApplicationController
   end
 
   def candidate_params
-    params.require(:candidate).permit(:name, :party, :birthday, :votes)
+    params.require(:candidate).permit(:name, :party, :birthday, :votes, :id)
   end
 end
