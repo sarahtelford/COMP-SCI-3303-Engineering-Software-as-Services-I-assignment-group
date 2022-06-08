@@ -1,18 +1,7 @@
-Given(/^I am on the home page$/) do
-  visit root_path
-end
-
-When(/^I click on "([^"]*)" and enter details$/) do |link_to|
-  click_link link_to
-  fill_in 'Name', with: 'My Name'
-  select '2000', from: 'Year'
-  select '9', from: 'Month'
-  select '9', from: 'Day'
-  fill_in 'Party', with: 'Legalise Cannabis Party'
-end
-
-Then(/^I should see "([^"]*)"$/) do |arg|
-  expect(page).to have_content(arg)
+Given(/^ the following Candidates exist:$/) do |candidates_table|
+  candidates_table.hashes.each do |candidate|
+    Candidate.create candidate
+  end
 end
 
 
@@ -20,29 +9,45 @@ Given(/^: I am on the home page$/) do
   visit root_path
 end
 
-When(/^: The user selects "([^"]*)" and enter duplicate details$/) do |link_to|
-  click_link link_to
-  fill_in 'Name', with: 'Mitchell Follett'
-  select '2000', from: 'Year'
-  select '9', from: 'Month'
-  select '9', from: 'Day'
+When(/^: I click on New Candidate I enter details for a candidate$/) do
+  visit '/candidates/new'
+  fill_in 'Name', with: 'My Name'
   fill_in 'Party', with: 'Legalise Cannabis Party'
-  click_link 'Register'
+  click_button 'Create Candidate'
 end
 
-Then(/^: The user should see "([^"]*)"$/) do |arg|
+Then(/^: I should see the new candidate on the homepage$/) do
+  visit admin_path
+  expect(page).to have_content("My Name")
+  expect(page).to have_content("Legalise Cannabis Party")
+end
+
+When(/^: I click on New Candidate I enter details for an already existing candidate$/) do
+  visit '/candidates/new'
+  fill_in 'Name', with: 'Steve Rogers'
+  fill_in 'Party', with: 'One Nation'
+  click_button 'Create Candidate'
+end
+
+Then(/^: The user should be redirected to the admin page$/) do
+  visit admin_path
+end
+
+And(/^: I should be informed that "([^"]*)"$/) do |arg|
   expect(page).to have_content(arg)
 end
 
-When(/^: The user selects "([^"]*)" and enter invalid details$/) do |link_to|
-  click_link link_to
-  select '2000', from: 'Year'
-  select '9', from: 'Month'
-  select '9', from: 'Day'
+And(/^I should be informed that "([^"]*)"$/) do |statement|
+  expect(page).to have_text(statement)
+end
+
+When(/^: I click on New Candidate I enter invalid details for a candidate$/) do
+  visit '/candidates/new'
   fill_in 'Party', with: 'Legalise Cannabis Party'
-  click_link 'Register'
+  click_button 'Create Candidate'
 end
 
 Then(/^: The user should observe "([^"]*)"$/) do |arg|
+  visit '/candidates/new'
   expect(page).to have_content(arg)
 end
