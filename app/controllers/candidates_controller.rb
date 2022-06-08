@@ -2,7 +2,7 @@ class CandidatesController < ApplicationController
 
   def index
     @candidate = Candidate.all
-    @party = Parties.all
+    @party = Party.all
   end
 
   def show
@@ -19,8 +19,8 @@ class CandidatesController < ApplicationController
   end
 
   def aboveLine
-    @party = Parties.all
-    @vote_number = Parties.vote_number
+    @party = Party.all
+    @vote_number = Party.vote_number
   end
 
   def belowLine

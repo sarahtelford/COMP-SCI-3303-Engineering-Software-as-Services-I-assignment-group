@@ -33,7 +33,7 @@ candidates = Candidates.create([
                                    party: "One Nation"}
                                ])
 
-parties = Parties.create([
+parties = Party.create([
                            { name: "Liberal Party of Australia"},
                            { name: "Australian Labor Party"},
                            { name: "Australian Greens"},
