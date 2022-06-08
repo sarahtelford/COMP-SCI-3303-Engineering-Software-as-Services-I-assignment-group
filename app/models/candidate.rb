@@ -5,5 +5,5 @@ class Candidate < ApplicationRecord
   validates :name, presence: true
   validates :party, presence: true
   validates :birthday, presence: true
-  belongs_to :party
+  # belongs_to :party
 end

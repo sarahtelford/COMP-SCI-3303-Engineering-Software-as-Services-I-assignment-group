@@ -5,6 +5,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+#
+parties = Party.create([
+                           { name: "Liberal Party of Australia"},
+                           { name: "Australian Labor Party"},
+                           { name: "Australian Greens"},
+                           { name: "Animals Justice Party"},
+                           { name: "Australian National Party"},
+                           { name: "One Nation"},
+                           { name: "Family First "},
+                           { name: "Legalise Cannabis Party"}
+                         ])
 
 candidates = Candidate.create([
                                  { name: "John Adam",
@@ -33,13 +44,3 @@ candidates = Candidate.create([
                                    party: "One Nation"}
                                ])
 
-parties = Party.create([
-                           { name: "Liberal Party of Australia"},
-                           { name: "Australian Labor Party"},
-                           { name: "Australian Greens"},
-                           { name: "Animals Justice Party"},
-                           { name: "Australian National Party"},
-                           { name: "One Nation"},
-                           { name: "Family First "},
-                           { name: "Legalise Cannabis Party"}
-                         ])
