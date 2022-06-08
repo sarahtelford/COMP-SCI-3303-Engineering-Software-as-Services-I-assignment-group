@@ -1,31 +1,28 @@
 
-<%= form_with model:@candidate do |form| %>
-
-  <table class="ui table">
+<table class="ui table">
+  <tr>
+    <th>
+      Party Name
+    </th>
+    <th>
+      Vote
+    </th>
+  </tr>
+  <tbody>
+  <% @parties.each do |part| %>
     <tr>
-      <th>
-        Party
-      </th>
-      <th>
-        Vote
-      </th>
+      <td><%= part.name %></td>
+      <td>
+        <%= form_for :vote, url: '/public/candidates_controller/aboveLineVote/' do |form| %>
+          <%= form.select :votes, %w[1 2 3 4 5 6], :include_blank => true, required:true %>
+          <%= form.hidden_field :id, value: part.id %>
+          <%= form.submit class: "ui primary button" %>
+        <% end %>
+      </td>
     </tr>
-    <tbody>
-    <% @party.each do |parties| %>
-      <tr>
-        <td><%= parties.name %></td>
-        <td class="right aligned">
-          <div class="ui left aligned">
-            <%= select :parties, :rating, ['1','2','3','4','5','6'] %>
-          </div>
-        </td>
-      </tr>
-    <% end %>
-    </tbody>
-    </table>
-
-  <div class="actions">
-    <%= form.submit class: "ui primary button" %>
-  </div>
-
-<% end %>
+  <% end %>
+  </tbody>
+  <%= link_to :below_line, class: "ui button" do %>
+    Below Line
+  <% end %>
+</table>
