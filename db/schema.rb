@@ -11,16 +11,16 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_06_08_051922) do
-  create_table "candidates", force: :cascade do |t|
-    t.string "name"
-    t.string "party"
-    t.date "birthday", null: false
-    t.integer "votes"
+  create_table 'candidates', force: :cascade do |t|
+    t.string 'name'
+    t.string 'party'
+    t.date 'birthday', null: false
+    t.integer 'votes'
   end
 
-  create_table "parties", force: :cascade do |t|
-    t.string "name"
-    t.integer "votes"
+  create_table 'parties', force: :cascade do |t|
+    t.string 'name'
+    t.integer 'votes'
   end
 
 end
