@@ -4,26 +4,26 @@
 
 <table class="ui table">
   <thead>
-  <tr>
-    <th>
-      Candidate Name
-    </th>
-    <th>
-      Party
-    </th>
-    <th>
-    </th>
-  </tr>
-  <tbody>
-  <% @candidate.each do |candidates| %>
     <tr>
-      <td><%= candidates.name %></td>
-      <td><%= candidates.party %></td>
+      <th>
+        Candidate Name
+      </th>
+      <th>
+        Party
+      </th>
+      <th>
+      </th>
     </tr>
-  <% end %>
-  </tbody>
+    <tbody>
+    <% @candidates.each do |c| %>
+      <tr>
+        <td><%= c.name %></td>
+        <td><%= c.party %></td>
+      </tr>
+    <% end %>
+    </tbody>
   </thead>
-  </table>
+</table>
 
 <br>
 

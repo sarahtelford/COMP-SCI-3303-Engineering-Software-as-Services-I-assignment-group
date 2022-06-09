@@ -15,7 +15,7 @@ class CandidatesController < ApplicationController
   end
 
   def new
-    @candidate = Candidate.newbundle i
+    @candidate = Candidate.new
   end
 
   def aboveLine
@@ -79,6 +79,7 @@ class CandidatesController < ApplicationController
   end
 
   def destroy
+    @candidate = Candidate.find(id)
     @candidate.destroy
     respond_to do |format|
       format.html { redirect_to admin_path, notice: "Candidate was successfully removed." }
@@ -93,6 +94,6 @@ class CandidatesController < ApplicationController
   end
 
   def candidate_params
-    params.require(:candidate).permit(:name, :party, :birthday, :votes, :id)
+    params.require(:candidate).permit(:name, :party, :birthday, :votes)
   end
 end

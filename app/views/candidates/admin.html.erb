@@ -2,7 +2,7 @@
   Australian Federal Election
 </h1>
 
-<%= link_to new_candidates_path, class: "ui primary right floated button" do %>
+<%= link_to new_candidate_path, class: "ui primary right floated button" do %>
   <i class="add icon"></i> New Candidate
 <% end %>
 <br>
@@ -36,13 +36,11 @@
       <td><%= c.votes %></td>
       <td class="right aligned">
         <div class="ui small basic buttons">
-          <%= link_to candidates_path, c, class: "ui button"%>
+          <%= link_to 'Show', c, class: "ui button"%>
           <%= link_to 'Destroy', c, method: :destroy, data: { confirm: 'Are you sure?' }, class: "ui button"%>
-
         </div>
       </td>
     </tr>
-
   <% end %>
   </tbody>
 
@@ -66,18 +64,15 @@
   </thead>
   <tbody>
 
-  <% @party.each do |party| %>
+  <% @parties.each do |party| %>
     <tr>
       <td><%= party.name %></td>
       <td><%= party.votes %></td>
       <td class="right aligned">
         <div class="ui small basic buttons">
-          <%= link_to party, class: "ui button" do %>
-            Show details
-          <% end %>
-          <%= link_to party, method: :destroy, data: { confirm: 'Are you sure?' }, class: "ui button" do %>
-            Remove party
-          <% end %>
+          <%= link_to 'Show', class: "ui button"%>
+          <%= link_to 'destroy', method: :destroy, data: { confirm: 'Are you sure?' }, class: "ui button" %>
+
         </div>
       </td>
     </tr>

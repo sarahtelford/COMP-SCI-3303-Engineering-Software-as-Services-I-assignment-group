@@ -1,6 +1,5 @@
 class VotingBelowController < ApplicationController
 
-
   def create
     @voteBelow = VoteBelow.new(votes)
 
