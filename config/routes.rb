@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'candidates#index'
   resource :candidates
-  resource :candidate
   resource :party
 
 

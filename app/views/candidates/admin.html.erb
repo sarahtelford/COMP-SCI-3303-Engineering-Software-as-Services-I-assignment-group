@@ -28,20 +28,17 @@
   </tr>
   </thead>
   <tbody>
-  <% @candidate.each do |candidate| %>
+  <% @candidates.each do |c| %>
     <tr>
-      <td><%= candidate.name %></td>
-      <td><%= candidate.party %></td>
-      <td><%= candidate.birthday %></td>
-      <td><%= candidate.votes %></td>
+      <td><%= c.name %></td>
+      <td><%= c.party %></td>
+      <td><%= c.birthday %></td>
+      <td><%= c.votes %></td>
       <td class="right aligned">
         <div class="ui small basic buttons">
-          <%= link_to candidate, class: "ui button" do %>
-            Show details
-          <% end %>
-          <%= link_to candidate, method: :destroy, data: { confirm: 'Are you sure?' }, class: "ui button" do %>
-            Remove Candidate
-          <% end %>
+          <%= link_to candidates_path, c, class: "ui button"%>
+          <%= link_to 'Destroy', c, method: :destroy, data: { confirm: 'Are you sure?' }, class: "ui button"%>
+
         </div>
       </td>
     </tr>

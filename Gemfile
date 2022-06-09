@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.0"
+ruby "2.7.2"
 
 gem 'sassc-rails'
 
@@ -17,7 +17,7 @@ gem "sprockets-rails"
 
 
 # Use the Puma web server [https://github.com/puma/puma]
-# gem "puma", "~> 5.0"
+gem "puma", "~> 5.0"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"

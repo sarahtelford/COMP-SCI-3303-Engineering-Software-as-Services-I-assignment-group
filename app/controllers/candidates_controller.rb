@@ -1,13 +1,12 @@
 class CandidatesController < ApplicationController
   before_action :set_candidate, only: %i[ show edit update destroy ]
   def index
-    @candidate = Candidate.all
+    @candidates = Candidate.all
     @party = Party.all
   end
 
   def show
-    id = params.require(:id)
-    @candidate = Candidate.find(id)
+
   end
 
   def edit
@@ -16,7 +15,7 @@ class CandidatesController < ApplicationController
   end
 
   def new
-    @candidate = Candidate.new
+    @candidate = Candidate.newbundle i
   end
 
   def aboveLine
@@ -56,13 +55,13 @@ class CandidatesController < ApplicationController
   end
 
   def admin
-    @candidate = Candidate.all
-    @party = Party.all
+    @candidates = Candidate.all
+    @parties = Party.all
   end
 
   def public
-    @candidate = Candidate.all
-    @party = Party.all
+    @candidates = Candidate.all
+    @parties = Party.all
   end
 
   def create
