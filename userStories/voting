@@ -38,5 +38,37 @@ vote.
     after submitting a confirmation message will appear.
 
 
+User Story: Changing method for voting
+Authorised users must be able to sign into the voting system using their unique username and password.
 
+Authorised users will be promoted with the option to vote "above the line" or "below the line".
+
+After selecting "below the line", users will be redirected to a form that contains all candidates.
+
+If a user decided that they want to vote "above the line" instead they will be able to change their vote type by
+selecting "above the line" button at the top of the page.
+
+After selecting "above the line", users will be redirected to a form that contains all the parties.
+
+When users select a party, a drop down list will appear with different voting preference numbers (1 - 12).
+
+After selecting a preference number. The number will appear next to the selected party.
+    all numbers must be assigned to a party
+    no parties can be assigned the same number
+    users can change the ordering at any point
+
+After all parties have been assigned a preference numbers, a button will appear which will allow user to submit their
+vote.
+    after submitting a confirmation message will appear.
+
+User Story: - An admin wants to view votes on candidates and parties
+Authorised users must be able to sign into the voting system using their unique username and password.
+
+Admin will be taken to the Admin home page, where all parties and candidate information will be posted
+
+if no votes have been casted
+    all parties and candidates votes will be 0
+
+if votes have been casted
+    voted parties and candidates will have their voted value assigned to them
 

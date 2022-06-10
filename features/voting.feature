@@ -55,6 +55,20 @@ Feature: Authorised users completing a vote
     Given : All numbers are assigned to a candidate
     Then : The submit button is enabled
 
+  Scenario: Users wants to submit their votes "below the line" but has not filled out all fields
+    Given : The user is on the "Below Line" voting page
+    And : The user should see the candidate table of data
+    When : The dropdown list is selected, numbers 1-12 are displayed
+    When : Value is selected and it is assigned to the associated candidate
+    Given : not all numbers are assigned to a candidate
+    Then : The submit button is disabled
 
 
+  Scenario: Users wants to submit their votes "above the line" but has not filled out all fields
+    Given : The user is on the "Below Line" voting page
+    And : The user should see the candidate table of data
+    When : The dropdown list is selected, numbers 1-6 are displayed
+    When : Value is selected and it is assigned to the associated candidate
+    Given : not all numbers are assigned to a candidate
+    Then : The submit button is disabled
 
