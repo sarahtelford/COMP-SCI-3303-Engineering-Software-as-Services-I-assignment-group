@@ -1,0 +1,22 @@
+User Story- Admin views the voting counts
+The admin logs in
+The admin is on the admin home page
+The admin should see all the votes for each candidate and party
+if no votes have been made all candidates and parties will show 0
+if votes have been made candidates and parties will reflect these votes
+
+User Stories - User votes above the line
+The public user logs in
+The public user selects to vote Above the Line
+The public user selects “1” for “Australian Greens”  and submits the vote
+The admin logs in
+The admin is on the admin home page
+The admin should see the votes for “Australian Greens” go up
+
+User Stories - User votes below the line
+The public user logs in
+The public user selects to vote Below the Line
+The public user selects “1” for “Mary-Jane Dope” and submits the vote
+The admin logs in
+The admin is on the admin home page
+The admin should see the votes for “Mary-Jane Dope” go up

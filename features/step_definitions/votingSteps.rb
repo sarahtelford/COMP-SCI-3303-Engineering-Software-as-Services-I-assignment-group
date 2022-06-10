@@ -33,24 +33,26 @@ Given(/^: The user is on the "Above Line" voting page$/) do
 end
 
 When(/^: The dropdown list is selected, numbers 1-6 are displayed$/) do
-  expect(page).to have_content('1')
-  expect(page).to have_content('2')
-  expect(page).to have_content('3')
-  expect(page).to have_content('4')
-  expect(page).to have_content('5')
-  expect(page).to have_content('6')
-end
-
-When(/^: Value is selected it is assigned to the associated party$/) do
-  pending
+  expect(page).to have_content(1)
+  expect(page).to have_content(2)
+  expect(page).to have_content(3)
+  expect(page).to have_content(4)
+  expect(page).to have_content(5)
+  expect(page).to have_content(6)
 end
 
 Given(/^: All numbers are assigned to a party$/) do
-  page.all('select#vote option').map(&:vote).should == %w(1 2 3 4 5 6)
+  expect(page).to have_select('Vote', selected: 1)
+  expect(page).to have_select('Vote', selected: 2)
+  expect(page).to have_select('Vote', selected: 3)
+  expect(page).to have_select('Vote', selected: 4)
+  expect(page).to have_select('Vote', selected: 5)
+  expect(page).to have_select('Vote', selected: 6)
 end
 
-Then(/^: The submit button is enabled$/) do
+Then(/^: The submit button is pressed$/) do
   expect(page).to have_button("Save")
+  click_button 'Save'
 end
 
 Then(/^: The user is redirected to the associated Below Line voting page$/) do
@@ -68,22 +70,45 @@ Given(/^: The user is on the "Below Line" voting page$/) do
   visit '/public/belowLine'
 end
 
-
-Given(/^: All numbers are assigned to a candidate$/) do
-  page.all('select#vote option').map(&:vote).should == %w(1 2 3 4 5 6 7 8 9 10 11 12)
+And(/^: All numbers are assigned to a candidate$/) do
+  expect(page).to have_select('vote', selected: 1)
+  expect(page).to have_select('Vote', selected: 2)
+  expect(page).to have_select('Vote', selected: 3)
+  expect(page).to have_select('Vote', selected: 4)
+  expect(page).to have_select('Vote', selected: 5)
+  expect(page).to have_select('Vote', selected: 6)
+  expect(page).to have_select('Vote', selected: 7)
+  expect(page).to have_select('Vote', selected: 8)
+  expect(page).to have_select('Vote', selected: 9)
+  expect(page).to have_select('Vote', selected: 10)
+  expect(page).to have_select('Vote', selected: 11)
+  expect(page).to have_select('Vote', selected: 12)
 end
 
 When(/^: The dropdown list is selected, numbers 1-12 are displayed$/) do
-  expect(page).to have_content('1')
-  expect(page).to have_content('2')
-  expect(page).to have_content('3')
-  expect(page).to have_content('4')
-  expect(page).to have_content('5')
-  expect(page).to have_content('6')
-  expect(page).to have_content('7')
-  expect(page).to have_content('8')
-  expect(page).to have_content('9')
-  expect(page).to have_content('10')
-  expect(page).to have_content('11')
-  expect(page).to have_content('12')
+  expect(page).to have_content(1)
+  expect(page).to have_content(2)
+  expect(page).to have_content(3)
+  expect(page).to have_content(4)
+  expect(page).to have_content(5)
+  expect(page).to have_content(6)
+  expect(page).to have_content(7)
+  expect(page).to have_content(8)
+  expect(page).to have_content(9)
+  expect(page).to have_content(10)
+  expect(page).to have_content(11)
+  expect(page).to have_content(12)
+end
+
+And(/^: not all numbers are assigned to a candidate$/) do
+  expect(page).not_to have_content(1)
+  expect(page).to have_content(2)
+  expect(page).to have_content(3)
+  expect(page).not_to have_content(4)
+  expect(page).to have_content(5)
+  expect(page).to have_content(6)
+end
+
+And(/^: user if informed about invalid vote$/) do
+  expect(page).to have_content("invalid vote")
 end

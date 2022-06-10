@@ -2,19 +2,19 @@ Feature: Authorised users completing a vote
 
   Background: Candidates in my database
     Given the following Candidates exist:
-      | name           |  party                      | birthday |
-      | John Adam      |  Liberal Party of Australia | 8/08/2008|
-      | Susie Smith    |  Australian Labor Party     | 8/08/2008|
-      | Xavier Barns   |  Australian Greens          | 8/08/2008|
-      | Paul Rudd      |  Animals Justice Party      | 8/08/2008|
-      | Tony Stark     |  Australian National Party  | 8/08/2008|
-      | Steve Rogers   |  One Nation                 | 8/08/2008|
-      | Donald Trumpet |  Family First               | 8/08/2008|
-      | Happy Harold   |  Australian Greens          | 8/08/2008|
-      | Mary-Jane Dope |  Legalise Cannabis Party    | 8/08/2008|
-      | Che Downs      |  Liberal Party of Australia | 8/08/2008|
-      | Agatha Brown   |  Animals Justice Party      | 8/08/2008|
-      | Logan Paul     |  One Nation                 | 8/08/2008|
+      | name           |  party                      | birthday | votes |
+      | John Adam      |  Liberal Party of Australia | 8/08/2008|       |
+      | Susie Smith    |  Australian Labor Party     | 8/08/2008|       |
+      | Xavier Barns   |  Australian Greens          | 8/08/2008|       |
+      | Paul Rudd      |  Animals Justice Party      | 8/08/2008|       |
+      | Tony Stark     |  Australian National Party  | 8/08/2008|       |
+      | Steve Rogers   |  One Nation                 | 8/08/2008|       |
+      | Donald Trumpet |  Family First               | 8/08/2008|       |
+      | Happy Harold   |  Australian Greens          | 8/08/2008|       |
+      | Mary-Jane Dope |  Legalise Cannabis Party    | 8/08/2008|       |
+      | Che Downs      |  Liberal Party of Australia | 8/08/2008|       |
+      | Agatha Brown   |  Animals Justice Party      | 8/08/2008|       |
+      | Logan Paul     |  One Nation                 | 8/08/2008|       |
 
     Given the following parties exist:
       | name                        |
@@ -37,9 +37,8 @@ Feature: Authorised users completing a vote
     Given : The user is on the "Above Line" voting page
     And : The user should see the table of data
     When : The dropdown list is selected, numbers 1-6 are displayed
-    When : Value is selected it is assigned to the associated party
-    Given : All numbers are assigned to a party
-    Then : The submit button is enabled
+    And : All numbers are assigned to a party
+    Then : The submit button is pressed
 
   Scenario: Users wants to vote "below the line"
     Given : The users are signed in to an authorised account
@@ -51,24 +50,22 @@ Feature: Authorised users completing a vote
     Given : The user is on the "Below Line" voting page
     And : The user should see the candidate table of data
     When : The dropdown list is selected, numbers 1-12 are displayed
-    When : Value is selected it is assigned to the associated candidate
-    Given : All numbers are assigned to a candidate
-    Then : The submit button is enabled
+    And : All numbers are assigned to a candidate
+    Then : The submit button is pressed
 
   Scenario: Users wants to submit their votes "below the line" but has not filled out all fields
     Given : The user is on the "Below Line" voting page
     And : The user should see the candidate table of data
     When : The dropdown list is selected, numbers 1-12 are displayed
-    When : Value is selected and it is assigned to the associated candidate
-    Given : not all numbers are assigned to a candidate
-    Then : The submit button is disabled
+    And : not all numbers are assigned to a candidate
+    Then : The submit button is pressed
+    And : user if informed about invalid vote
 
 
   Scenario: Users wants to submit their votes "above the line" but has not filled out all fields
     Given : The user is on the "Below Line" voting page
     And : The user should see the candidate table of data
     When : The dropdown list is selected, numbers 1-6 are displayed
-    When : Value is selected and it is assigned to the associated candidate
-    Given : not all numbers are assigned to a candidate
-    Then : The submit button is disabled
-
+    And : not all numbers are assigned to a candidate
+    Then : The submit button is pressed
+    And : user if informed about invalid vote
