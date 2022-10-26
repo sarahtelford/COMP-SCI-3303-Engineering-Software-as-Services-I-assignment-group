@@ -1,0 +1,35 @@
+Senate Voting System
+Disclaimer:
+This is not a project on behalf of AEC, Australian Senate or Australian Government. The project description is only for an academic exercise. The public version of the laws are referred only as an example of the voting processes. Please do not use any of the AEC, Australian Senate or Australian Government operational systems for getting requirements or getting familiarity with the voting process.
+
+Project Description:
+The group project for this semester is to implement a web based voting system for a hypothetical body modelled on the Australian Senate, in which voters can either cast votes by voting for parties ("above the line") or for individual candidates ("below the line"). The system will allow an electoral commissioner to enter details of the candidates, including their order within their party grouping. It will allow individual voters to enter their votes either above the line, below the line but not both. It will correctly calculate the order in which senators should be elected. It will also allow the commissioner to manually exclude candidates if a recount should be ordered.
+
+To understand the senate voting mechanism on which this project is modelled, it may be useful to refer to the following links about the actual voting rules for the Australian Senate:
+The AEC published version of the senate voting rules (http://aec.gov.au/Voting/How_to_Vote/Voting_Senate.htm).
+
+This is the public version of how to vote which is reflected in section 239 of the Electoral Act and
+then replaced by a far more flexible set of rules in sections 268, 268A and 269.
+The Commonwealth Electoral Act 1918 (https://www.legislation.gov.au/Details
+/C2018C00062) in force on 14 September 2017.
+
+The most relevant sections are 239, 268, 268A, 269 and 273.
+Senate downloads for the 2016 Federal Election (http://results.aec.gov.au/20499/Website
+/SenateDownloadsMenu-20499-Csv.htm).
+
+Example ballot papers for federal senate elections are also available from the AEC website, and these can be useful for checking that your vote counting implementation of section 273 is correct.
+
+Scale
+An important consideration in any system is scale. In this case we expect to trial the system as an alternative voting mechanism at each polling station so approximately 7,000 web terminals may be in use. A full implementation would need to be able to handle up to 40,000 web terminals. All remaining voting including most prepoll voting and all postal votes will be handled by the conventional paper ballots. Following the election all paper ballots will be scanned and made available in electronic form prior to the final count.
+
+Authentication and Authorisation
+Authentication is the process of establishing the identity of a user attempting to access your application. Once the identity has been established authorisation is the process of establishing what actions the particular user is permitted to take. It is very easy to waste too much time trying to get your own authentication scheme to work when, in most cases, this can simply be delegated to the web server that fronts your application.
+
+For the purposes of this assignment we will assume that the web server will apply appropriate access controls so that only authenticated and authorised users can access routes that start with "admin/" and only vetted voters can access routes that start with "voter/". 
+
+Heroku and Limitations
+Your heroku app must be named group<group number>-22-s1-esas. So if you are in group 09 your app would be found at
+
+https://group09-22-s1-esas.herokuapp.com
+
+Due the data limitations of the free plan it is not possible to use all of a state's election data with Heroku. It is too large and would take too long to upload even if it could be accommodated. However, a local implementation that correctly replicates the 2016 Federal Election results is expected to be completed in order to demonstrate that the implementation of the counting is correct. An alternative to Heroku may be made available before the end of the project that does not have the Heroku limitations.
